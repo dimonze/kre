@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="en" target-language="ru" datatype="plaintext" original="messages" date="2008-12-24T18:32:11Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Actions</source>
+        <target>Действия</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Filters</source>
+        <target>Фильтр</target>
+      </trans-unit>
+
+      <trans-unit>
+        <source>%1% - %2% of %3%</source>
+        <target>%1% - %2% из %3%</target>
+      </trans-unit>
+      <trans-unit>
+        <source>First</source>
+        <target>Первая</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Prev</source>
+        <target>Предыдущая</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Next</source>
+        <target>Следующая</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last</source>
+        <target>Последняя</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

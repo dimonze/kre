@@ -1,0 +1,35 @@
+.minwidth {width: expression((document.documentElement.clientWidth || document.body.clientWidth) < 1000? "1000px":"100%");}
+
+.best_offer SPAN,
+#top STRONG,
+#top SPAN
+{behavior: expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none", this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')", this.src = "/pics/i/blank.gif"):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''), this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')", this.runtimeStyle.backgroundImage = "none")),this.pngSet=true));}
+
+.ul_list SPAN {right: -1px;}
+.ul_list LI {height: 18px;}
+
+.page {overflow-x: hidden;}
+.rside {margin-left: -1px; overflow-x: hidden;}
+.cside.c_full {margin-left: -1px; overflow-x: hidden;}
+.select_btn INPUT {filter:alpha(opacity=0); background: url(/pics/i/blank.gif); border: none;}
+.checkbox {height: 1%;}
+.checkbox INPUT {left: -4px; top: 3px;}
+#content .cat_summ {height: 1%; margin-top: 19px;}
+#content .cat_summ INPUT {left: 2px; top: 2px;}
+
+.input INPUT {padding: 4px 0px;}
+
+.in_cat {table-layout: fixed; width: 99%;}
+#map {position: absolute;}
+#typeDiv {position: absolute;}
+#map LABEL {height: 1%;}
+#map LABEL INPUT {left: -4px; top: -2px;}
+#typeDiv LABEL {height: 1%;}
+#typeDiv LABEL INPUT {left: -4px; top: -2px;}
+
+.l_col_s {padding-top: 19px;}
+#content.presentation .lot {margin: 23px 0px 0px 10px;}
+
+.input2 {width: 100%;}
+
+.l_col {height: 100%; position: relative;}

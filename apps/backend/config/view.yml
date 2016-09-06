@@ -1,0 +1,16 @@
+default:
+  http_metas:
+    content-type: text/html; charset=utf-8
+
+  metas:
+    title:        admin kre
+    language:     ru
+
+  stylesheets:
+    - backend.css: {position: last}
+
+  javascripts:
+    - backend.js: {position: last}
+
+  has_layout:     true
+  layout:         layout

@@ -1,0 +1,7 @@
+all:
+  sf_admin_theme_jroller_plugin:
+    web_dir:    /sfAdminThemejRollerPlugin
+    use_jquery: true
+    theme_dir:  /sfAdminThemejRollerPlugin/css/jquery
+    theme:      redmond
+    css_reset:  true

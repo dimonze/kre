@@ -1,0 +1,8 @@
+object:
+  credentials: [manager, broker]
+logout:
+  credentials: []
+login:
+  credentials: []
+all:
+  credentials: [manager]

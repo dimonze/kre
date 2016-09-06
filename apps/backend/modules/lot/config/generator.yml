@@ -1,0 +1,120 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Lot
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          lot
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        id:                 { label: 'ID' }
+        type:               { label: 'Тип недвижимости' }
+        type_real:          { label: 'Тип недвижимости' }
+        has_children:       { label: 'Является надобъектом' }
+        is_penthouse:       { label: 'Является пентхаусом' }
+        is_special:         { label: 'В блоке "Лучшие предложения"' }
+        special_text:       { label: 'Текст для главной'}
+        hidden_text:        { label: 'Комментарии'}
+        pid:                { label: 'Надобъект' }
+        name:               { label: 'Наименование' }
+        market:             { label: 'Рынок' }
+        shortcut:           { label: 'ЧПУ' }
+        address:            { label: 'Адрес' }
+        metro_id:           { label: 'Станция метро' }
+        district_id:        { label: 'Район' }
+        ward:               { label: 'Направление' }
+        ward2:              { label: 'Дополнительное направление' }
+        hide_price:         { label: 'Скрыть цену' }
+        price:              { label: 'Цена за кв.м' }
+        price_from:         { label: 'Цена за кв.м от' }
+        price_to:           { label: 'Цена за кв.м до' }
+        price_all:          { label: 'Цена общая' }
+        price_all_from:     { label: 'Цена общая от' }
+        price_all_to:       { label: 'Цена общая до' }
+        area:               { label: 'Площадь' }
+        area_from:          { label: 'Площадь от' }
+        area_to:            { label: 'Площадь до' }
+        currency:           { label: 'Валюта' }
+        new_price:          { label: 'Новая цена до' }
+        new_object:         { label: 'Новый объект до' }
+        anons:              { label: 'Анонс' }
+        description:        { label: 'Описание' }
+        broker_id:          { label: 'Телефон/факс' }
+        show_phone:         { label: 'Отображение номеров'}
+        rating:             { label: 'Рейтинг' }
+        status:             { label: 'Активность' }
+        priority:           { label: 'Приоритет для выгрузки' }
+        premium_cian:       { label: 'Премиум циан' }
+        firstId:            { label: 'Начать с ID' }
+        lastId:             { label: 'Закончить на ID' }
+        exportable:         { label: 'Экспортируемость' }
+        seo_title:          { label: 'SEO Title' }
+        seo_description:    { label: 'SEO Description' }
+        seo_keywords:       { label: 'SEO Keywords' }
+        type_text:          { label: 'Тип' }
+        file:               { label: 'Изображение' }
+        locality:           { label: 'Нас. пункт' }
+        cottageVillage:     { label: 'Котт. поселок' }
+        objecttype:         { label: 'Тип объекта' }
+        rooms:              { label: 'Кол-во комнат' }
+        estate:             { label: 'Жилой комплекс' }
+        is_special:         { label: 'В блоке на главной' }
+        lat:                { label: 'Координаты широты' }
+        lng:                { label: 'Координаты долготы' }
+        PhotosNew:          { label: 'Добавить фото' }
+        Photos:             { label: false }
+        LotParams:          { label: false }
+        LotParamsNew:       { label: false }
+
+      list:
+        title:              'Список объектов недвижимости'
+        # @see _list_th_tabular
+        display:            [id, =name, type_text, _price_all, _area, status_name, rating]
+        max_per_page:       30
+        sort:               [id, desc]
+        object_actions:
+          status: ~
+          _edit: ~
+          _delete: ~
+        batch_actions:
+          _delete: ~
+          activate:         { label: 'Активировать' }
+          hide:             { label: 'Скрыть' }
+          deactivate:       { label: 'Деактивировать' }
+      filter:
+        display:            [id, firstId, lastId, name, type, pid, district_id, market, metro_id, ward, price, rooms, estate, locality, objecttype, cottageVillage, status, premium_cian, priority, exportable, is_special]
+      form:
+        display:
+          Основное:         [file, name, type_real, is_penthouse, is_special, has_children, pid, metro_id, ward, ward2, anons, special_text, description, hidden_text, broker_id, show_phone, rating, status, priority, exportable]
+          Параметры:        [area, hide_price, currency, price, price_all]
+          Фото:             [~photos, PhotosNew]
+          Метка:            [address_string, district_id, _map]
+          SEO:              [shortcut, seo_title, seo_description, seo_keywords]
+        fields:
+          anons:            { attributes: { cols: 120, rows: 20 } }
+          name:             { attributes: { class: wide } }
+          price:            { attributes: { class: medium } }
+          price_all:        { attributes: { class: medium } }
+          area:             { attributes: { class: float } }
+          rating:           { attributes: { class: narrow } }
+          seo_description:  { attributes: { cols: 70 } }
+          seo_title:        { attributes: { class: wide } }
+          seo_keywords:     { attributes: { class: wide } }
+      edit:
+        title:              'Редактирование объекта "%%name%%"'
+        actions:
+          frontend_show: ~
+          set_main: ~
+          _delete: ~
+          _list: ~
+          clone: ~
+          _save: ~
+      new:
+        title:              'Добавление объекта'

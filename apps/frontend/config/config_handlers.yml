@@ -1,0 +1,5 @@
+config/seotext.yml:
+  class: sfDefineEnvironmentConfigHandler
+  param:
+    prefix: seo_
+    module: false

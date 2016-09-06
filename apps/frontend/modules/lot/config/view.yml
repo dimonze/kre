@@ -1,0 +1,38 @@
+listSuccess:
+  components:
+    one:          [menu, lot]
+#    two:          [menu, orderCatalog]
+#    three:        [seotext, get]
+  javascripts: [jquery.cookie.js]
+
+searchSuccess:
+  components:
+    one:          [menu, lot]
+#    two:          [menu, orderCatalog]
+#    three:        [seotext, get]
+  javascripts: [jquery.cookie.js]
+
+showSuccess:
+  components:
+    one:          [menu, lot]
+#    two:          [menu, orderCatalog]
+#    three:        [seotext, get]
+
+mainSuccess:
+  components:
+    one:          [menu, lot]
+#    two:          [menu, orderCatalog]
+
+presentationSuccess:
+  layout: clean
+  javascripts: [-*, jquery.min.js, presentation]
+  stylesheets:
+    - -*
+    - content.css
+    - main.css
+    - print.css: { media: print }
+
+imagesSuccess:
+  layout: clean
+  javascripts: [-*, jquery.min.js, presentation]
+  stylesheets: [-*, base]

@@ -1,0 +1,90 @@
+lot_log:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                LotLog
+    module:               lot_log
+    prefix_path:          /lot_log
+    column:               id
+    with_wildcard_routes: true
+
+main_offer:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MainOffer
+    module:               main_offer
+    prefix_path:          /main_offer
+    column:               type
+    with_wildcard_routes: true
+    
+stat:
+  url:   /stat
+  param: { module: stat, action: index }
+  
+statId:
+  url:   /stat/:id
+  param: { module: stat, action: lot }
+
+seo_text:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SeoText
+    module:               seotext
+    prefix_path:          /seotext
+    column:               id
+    with_wildcard_routes: true
+
+claim:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Claim
+    module:               claim
+    prefix_path:          /claim
+    column:               id
+    with_wildcard_routes: true
+
+lot:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Lot
+    module:               lot
+    prefix_path:          /lot
+    column:               id
+    with_wildcard_routes: true
+    
+lot_tba:
+  url:  /lot/tbaList/:id/
+  param: { module: lot, action: tbaList }
+
+page:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Page
+    module:               page
+    prefix_path:          /page
+    column:               id
+    with_wildcard_routes: true
+
+broker:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Broker
+    module:               broker
+    prefix_path:          /broker
+    column:               id
+    with_wildcard_routes: true
+
+vacancy:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Vacancy
+    module:               vacancy
+    prefix_path:          /vacancy
+    column:               id
+    with_wildcard_routes: true    
+
+homepage:
+  url:   /
+  param: { module: lot, action: index }
+
+default:
+  url:   /:module/:action/*

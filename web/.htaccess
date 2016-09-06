@@ -1,0 +1,69 @@
+Options +FollowSymLinks +ExecCGI
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # uncomment the following line, if you are having trouble
+  # getting no_script_name to work
+  RewriteBase /
+
+  # "kre.ru -> www.kre.ru"
+  RewriteCond %{HTTP_HOST} ^kre.ru
+  RewriteRule (.*) http://www.kre.ru/$1 [R=301,L]
+
+  # "http://www.kre.ru/offers/cottage/snyat_dom_v_angelovo/6772/ -> 
+  # http://www.kre.ru/offers/cottage/snyat_dom_v_angelovo/"
+  RewriteCond %{REQUEST_URI} ^(.*)/offers/cottage/snyat_dom_v_angelovo/6772/?$
+  RewriteRule (.*) http://www.kre.ru/offers/cottage/snyat_dom_v_angelovo/ [R=301,L]
+  
+  # www.kre.ru/index.php?p=7 > www.kre.ru
+  RewriteCond %{QUERY_STRING} p=7$
+  RewriteRule ^index\.php$ http://www.kre.ru/? [L,R=301]
+
+  #  http://www.kre.ru/about/2/ -> http://www.kre.ru/about/
+  #  http://www.kre.ru/services/2135/ -> http://www.kre.ru/services/
+  #  http://www.kre.ru/analytics/6/archive/ -> http://www.kre.ru/analytics/
+  #  http://www.kre.ru/advices/17/ -> http://www.kre.ru/advices/
+  #  http://www.kre.ru/news/ ->  http://www.kre.ru/news/archive/
+  #  http://www.kre.ru/services/5/ -> http://www.kre.ru/about/5/
+  #  http://www.kre.ru/analytics/5/ -> http://www.kre.ru/about/5/
+
+  RewriteCond %{REQUEST_URI} ^(.*)/about/2/?$
+  RewriteRule (.*) http://www.kre.ru/about/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^(.*)/services/2135/?$
+  RewriteRule (.*) http://www.kre.ru/services/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^(.*)/analytics/6/archive/?$
+  RewriteRule (.*) http://www.kre.ru/analytics/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^(.*)/advices/17/
+  RewriteRule (.*) http://www.kre.ru/advices/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^(.*)/news/?$
+  RewriteRule (.*) http://www.kre.ru/news/archive/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^(.*)/services/5/?$
+  RewriteRule (.*) http://www.kre.ru/about/5/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^(.*)/analytics/5/?$
+  RewriteRule (.*) http://www.kre.ru/about/5/ [R=301,L] 
+
+ # редирект с http://www.kre.ru/offers/cottage/arenda_doma_v_benilyuks/5468/ 
+ # на http://www.kre.ru/offers/cottage/arenda_doma_v_benilyuks/
+  RewriteCond %{REQUEST_URI} ^(.*)/offers/cottage/arenda_doma_v_benilyuks/5468/
+  RewriteRule (.*) http://www.kre.ru/offers/cottage/arenda_doma_v_benilyuks/ [R=301,L] 
+
+  #http://www.kre.ru/offers/outoftown/arenda_doma_v_benilyuks/5468/ 
+  #на http://www.kre.ru/offers/outoftown/prodaja_doma_v_benilyuks/5468/
+  RewriteCond %{REQUEST_URI} ^(.*)/offers/outoftown/arenda_doma_v_benilyuks/5468/
+  RewriteRule (.*) http://www.kre.ru/offers/outoftown/prodaja_doma_v_benilyuks/5468/ [R=301,L] 
+
+  # add trailing slash
+#  RewriteCond %{REQUEST_FILENAME} !-f
+#  RewriteCond %{REQUEST_URI} !(.*).json$
+#  RewriteCond %{REQUEST_URI} !(.*)/$
+#  RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+  # "old -> new" lot url
+  RewriteCond %{REQUEST_URI} ^(.*)/details/([0-9]+)/$
+  RewriteRule ^(.*)/$ $1 [R=302,L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # no, so we redirect to our front web controller
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

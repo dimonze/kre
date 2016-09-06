@@ -1,0 +1,154 @@
+homepage:
+  url:      /
+  param:    { module: page, action: homepage }
+
+about:
+  url:   /about/:id/
+  param: { module: page, action: index, id: 2, elem: about }
+
+news:
+  url:   /news/:id/
+  param: { module: page, action: news, id: 0 }
+  requirements:
+    id: \d+
+
+news_archive:
+  url:  /news/archive/:year/
+  param: { module: page, action: newsArchive, year: <?=date('Y')?> }
+
+services:
+  url:   /services/:id/
+  param: { module: page, action: index, id: 11, elem: services }
+
+analytics:
+  url:   /analytics/:id/
+  param: { module: page, action: index, id: 0, elem: analytics }
+
+review:
+  url:   /analytics/6/:id/
+  param: { module: page, action: review, id: 0 }
+  requirements:
+    id: \d+
+
+review_archive:
+  url:  /analytics/6/archive/:year/
+  param: { module: page, action: reviewArchive, year: <?=date('Y')?> }
+
+advices:
+  url:   /advices/:id/
+  param: { module: page, action: index, id: 16, elem: advices }
+
+contacts:
+  url:   /contacts/
+  param: { module: page, action: index, id: 26, elem: contacts }
+
+claim:
+  url:   /claim/
+  param: { module: form, action: claim }
+
+ordercatalog:
+  url: /ordercatalog/
+  param: { module: form, action: orderCatalog }
+
+resume_send:
+  url:   /vacancies/send/
+  param: { module: vacancy, action: send }
+  requirements: { sf_method: post }
+
+vacancy_page:
+  url:   /vacancies/:id/
+  class: sfDoctrineRoute
+  param: { module: vacancy, action: page }
+  options: { model: Page, type: object }
+  requirements: { id: \d+ }
+
+vacancies:
+  url:   /vacancies/:type/
+  param: { module: vacancy, action: list, type: '' }
+  requirements: { id: \w+ }
+
+pdf:
+  url:  /offers/print/pdf/
+  param: { module: lot, action: pdf }
+
+save_pdf:
+  url:  /offers/print/savepdf/
+  param: { module: lot, action: savePdf }
+
+offers:
+  url:  /offers/
+  param: { module: lot, action: main }
+
+offer_search:
+  url:  /offers/search/
+  param: { module: lot, action: search, }
+
+offer_search_landing:
+  url:  /offers/search/:landing/
+  param: { module: lot, action: search, }
+
+lot:
+  url:  /lot/hideParent/:id/
+  param: { module: lot, action: hideParent }
+  requirements: { id: \d+ }
+
+calc:
+  url:  /offers/calc/:sum/
+  param: { module: lot, action: calc }
+  requirements: { sum: \d+ }
+
+images:
+  url:  /offers/:type/images/:id/
+  class: sfDoctrineRoute
+  param: { module: lot, action: images }
+  options:      { model: Lot, type: object, method: getObject }
+  requirements: { id: \d+ }
+
+offer:
+  url:  /offers/:type/:id/
+  class: sfDoctrineRoute
+  param: { module: lot, action: show }
+  options:      { model: Lot, type: object, method: getObject }
+  requirements: { id: \d+ }
+
+offers_list_preset:
+  url:  /offers/:type/:preset/
+  param: { module: lot, action: list }
+
+offers_list:
+  url:  /offers/:type/
+  param: { module: lot, action: list }
+
+offer_redirect:
+  url:  /offers/:type/details/:id/
+  param: { module: lot, action: redirectId }
+  requirements: { id: \d+ }
+
+presentation:
+  url:  /offers/:type/presentation/:id/
+  class: sfDoctrineRoute
+  param: { module: lot, action: presentation }
+  options:      { model: Lot, type: object, method: getObject }
+  requirements: { id: \d+ }
+
+offer_shortcut:
+  url:  /offers/:type/:shortcut/:id/
+  class: sfDoctrineRoute
+  param: { module: lot, action: show }
+  options:      { model: Lot, type: object, method: getObject }
+
+data:
+  url:  /data/:action.:sf_format
+  param: { module: data }
+
+csstat:
+  url: /csstat/
+  param: { module: csstat, action: login }
+
+csstat_acts:
+  url: /csstat/:action/
+  param: { module: csstat, action: :action }
+
+sitemap:
+  url: /sitemap/
+  param: { module: page, action: sitemap }

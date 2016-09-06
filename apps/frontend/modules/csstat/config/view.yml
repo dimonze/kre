@@ -1,0 +1,12 @@
+objectSuccess:
+  components:
+    one:          [menu, csstat]
+brokerSuccess:
+  components:
+    one:          [menu, csstat]
+querySuccess:
+  components:
+    one:          [menu, csstat]
+recommendationSuccess:
+  components:
+    one:          [menu, csstat]recommendationSuccess

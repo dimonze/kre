@@ -1,0 +1,46 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    X-UA-Compatible: IE=8
+    content-type: text/html
+
+  metas:
+    title:        Элитная недвижимость Москвы | Агентство элитной недвижимости CONTACT Real Estate
+    description:  Продажа элитной недвижимости в Москве и Подмосковье. От роскошного пентхауса – до коттеджа в элитном поселке. Услуги для покупателя без комиссии.
+    robots:       index, follow
+    yandex-verification: 7d24bc914f9e6a7c
+
+  stylesheets:
+    - content.css
+    - colorbox.css
+    - main.css
+    - upd.css
+    - ie6.css: { condition: 'lte IE 6', media: 'all' }
+    - print.css: { media: print }
+
+  javascripts:
+    - prototype.js
+    - jquery.min.js
+    - jquery-nc.js
+    - jquery.colorbox.min.js
+    - scriptaculous.js?load=effects
+    - device.min.js
+    - main.js
+    - common.js
+    - swfobject.js
+    - social.js
+    - upd.js
+    - respond.min.js: { condition: 'IE' }
+
+  has_layout:     true
+  layout:         layout
+
+  components:
+    one:            []
+    two:            []
+    three:          []
+    four:           []
+    five:           []
+    six:            []

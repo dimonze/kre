@@ -1,0 +1,7 @@
+_latestNews:
+  enabled:    true
+  lifetime:   115
+
+_latestReviews:
+  enabled:    true
+  lifetime:   122

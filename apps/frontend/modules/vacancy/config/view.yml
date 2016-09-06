@@ -1,0 +1,8 @@
+listSuccess:
+  components:
+    one:          [menu, vacancy]
+#    two:          [menu, orderCatalog]
+#    three:        [seotext, get]
+  javascripts:
+    - jquery.form.js: { condition: 'IE' }
+    - jquery.cookie.js

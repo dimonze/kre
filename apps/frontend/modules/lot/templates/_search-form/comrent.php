@@ -1,0 +1,1 @@
+<?php include_partial('lot/search-form/comsell', array('form' => $form, 'type' => $type)) ?>

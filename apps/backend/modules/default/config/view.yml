@@ -1,0 +1,15 @@
+loginSuccess:
+  has_layout: false
+
+configSuccess:
+  stylesheets:
+    - /sfAdminThemejRollerPlugin/css/reset.css
+    - /sfAdminThemejRollerPlugin/css/jquery/redmond/jquery-ui.custom.css
+    - /sfAdminThemejRollerPlugin/css/jroller.css
+    - /sfAdminThemejRollerPlugin/css/fg.menu.css
+  javascripts:
+    - /sfAdminThemejRollerPlugin/js/jquery.min.js
+    - /sfAdminThemejRollerPlugin/js/jquery-ui.custom.min.js
+    - /sfAdminThemejRollerPlugin/js/fg.menu.js
+    - /sfAdminThemejRollerPlugin/js/jroller.js
+    - /js/tiny_mce/tiny_mce.js

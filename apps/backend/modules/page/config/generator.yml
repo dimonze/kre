@@ -1,0 +1,61 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Page
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          page
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        name:               { label: 'Наименование' }
+        is_active:          { label: 'Опубликовано' }
+        anons:              { label: 'Анонс' }
+        body:               { label: 'Текст' }
+        created_at:         { label: 'Дата' }
+        seo_title:          { label: 'SEO Title' }
+        seo_description:    { label: 'SEO Description' }
+        seo_keywords:       { label: 'SEO Keywords' }
+        parent_id:          { label: 'Родительская страница' }
+
+      list:
+        title:              'Список страниц'
+        display:            [=name]
+        layout:             stacked
+        params:             %%indent%% %%name%%
+        table_method:       retrieveBackendPageList
+        max_per_page:       30
+        sort:               [lft, asc]
+        object_actions:
+          publish:          { label: 'Опубликовать', action: publish }
+          unpublish:        { label: 'Скрыть', action: unpublish }
+          promote:          { label: 'Выше', action: promote }
+          demote:           { label: 'Ниже', action: demote }
+          _edit: ~
+          _delete: ~
+        batch_actions:      {}
+
+      filter:
+        display:            [name, children, is_active]
+        fields:
+          children:         { label: 'Принадлежность' }
+      form:
+        display:
+          Основное:         [parent_id, name, anons, body, created_at]
+          SEO:              [seo_title, seo_description, seo_keywords]
+        fields:
+          name:             { attributes: { class: wide } }
+          seo_description:  { attributes: { cols: 70 } }
+          seo_title:        { attributes: { class: wide } }
+          seo_keywords:     { attributes: { class: wide } }
+
+      edit:
+        title:              'Редактирование страницы "%%name%%"'
+      new:
+        title:              'Создание страницы'

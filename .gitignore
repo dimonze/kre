@@ -1,0 +1,14 @@
+.DS_Store
+/nbproject
+/.idea
+/cache/*
+/data/*
+/log/*
+/lib/form/doctrine/base/*
+/lib/filter/doctrine/base/*
+/lib/model/doctrine/base/*
+/test
+/web/sitemap*
+/web/uploads/*
+/web/uploads_old/
+sftp-config.json

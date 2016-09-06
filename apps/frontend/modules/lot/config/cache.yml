@@ -1,0 +1,7 @@
+_best:
+  enabled:    false
+  lifetime:   306
+
+main:
+  enabled:    true
+  lifetime:   306

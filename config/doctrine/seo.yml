@@ -1,0 +1,34 @@
+detect_relations: false
+options:
+  type: InnoDB
+  collate: utf8_general_ci
+  charset: utf8
+
+SeoText:
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    url:
+      type: clob(65532)
+      notnull: true
+    hrurl:
+      type: string(250)
+      notnull: true
+    name:
+      type: string(250)
+      notnull: true
+    title:
+      type: string(250)
+      notnull: true
+    text:
+      type: clob(65532)
+      notnull: true
+    description:
+      type: string(500)
+      notnull: false
+    keywords:
+      type: string(500)
+      notnull: false

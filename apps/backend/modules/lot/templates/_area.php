@@ -1,0 +1,1 @@
+<?= single_or_range($lot, 'area') ?>

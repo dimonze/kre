@@ -1,0 +1,39 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Vacancy
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          vacancy
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        type:               { label: 'Раздел' }
+        type_text:          { label: 'Раздел' }
+        name:               { label: 'Наименование' }
+        description:        { label: 'Описание' }
+        email:              { label: 'E-mail для резюме' }
+        phone:              { label: 'Контактный телефон' }
+        fio:                { label: 'Контактное лицо' }
+      list:
+        title:              'Список вакансий'
+        display:            [=name, type_text]
+        sort:               [id, desc]
+        object_actions:
+          _edit: ~
+          _delete: ~
+      filter:
+        class:              false
+      form:
+        fields:
+          name:             { attributes: { class: wide } }
+      edit:
+        title:              'Редактирование вакансии "%%name%%"'
+      new:
+        title:              'Добавление вакансии'

@@ -1,0 +1,1 @@
+<p class="back_first"><?=link_to('На главную', '@homepage')?></p>

@@ -1,0 +1,45 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Broker
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          broker
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        name:               { label: 'Имя' }
+        phone:              { label: 'Телефон' }
+        department:         { label: 'Отдел' }
+        department_name:    { label: 'Отдел' }
+        role:               { label: 'Роль' }
+        role_name:          { label: 'Роль' }
+        login:              { label: 'Логин' }
+        password:           { label: 'Пароль' }
+        hidden:             { label: 'Телефон скрыт' }
+      list:
+        title:              'Список брокеров'
+        display:            [=name, phone, department_name, role_name, _hidden]
+        max_per_page:       30
+        sort:               [id, asc]
+        object_actions:
+          _edit: ~
+          _delete: ~
+        batch_actions:      {}
+      filter:
+        display:            [name]
+      form:
+        display:
+          Основное:         [name, phone, department, email, role, login, password]
+        fields:
+          name:             { attributes: { class: wide } }
+      edit:
+        title:              'Редактирование брокера "%%name%%"'
+      new:
+        title:              'Создание брокера'

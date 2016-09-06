@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           SeoText
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          seo_text
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        url:                { label: 'URL' }
+        hrurl:              { label: 'ЧПУ' }
+        name:               { label: 'Заголовок' }
+        text:               { label: 'СЕО-текст'}
+        description:        { label: 'description'}
+        keywords:           { label: 'keywords'}
+      list:
+        title:              'Список СЕО-текстов'
+        display:            [=name, url]
+        sort:               [id, desc]
+        object_actions:
+          _edit: ~
+          _delete: ~
+      filter:  ~
+      form:    ~
+      edit:
+        title:              'Редактирование СЕО-текста для "%%url%%"'
+      new:
+        title:              'Добавление СЕО-текста'

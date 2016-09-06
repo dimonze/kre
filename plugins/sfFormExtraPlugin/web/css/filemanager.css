@@ -1,0 +1,53 @@
+a img { border: none }
+a { outline: none }
+
+.panel { background: #eef; padding: 5px; border: 1px solid #dde; overflow: hidden; }
+
+#toolbar { border-bottom: none; }
+#toolbar .bt { display: block; float: left; margin: 5px 10px; cursor: pointer }
+#toolbar .separator { display: block; float: left; margin: 5px 10px;  }
+#toolbar .indicator { display: none; float: right; width: 32px; height: 32px; margin: 5px 10px; background: url('/sfFormExtraPlugin/images/indicator-big.gif') }
+
+#toolbar a:hover { filter:alpha(opacity=40); -moz-opacity: 0.4; opacity: 0.4; }
+#toolbar a.disabled { cursor: default; filter:alpha(opacity=20); -moz-opacity: 0.2; opacity: 0.2; }
+
+#path ul, #path li { list-style-type: none; margin: 0; padding: 0; }
+#path li { float: left; margin: 0 3px; background: none !important; }
+#path li a { display: block; padding: 3px 5px; border: 1px solid #e3e3f4; text-decoration: none !important; color: #666; font-size: 14px; }
+#path li a:hover, #path li a.current { background: #f3f3ff; }
+#path li a.current { font-weight: bold; border: 2px solid #dde; }
+
+
+#status { font-size: 0.7em; }
+
+.panel.upload { display: none; border-top: none; }
+
+#browser-wrapper { padding: 0; height: 340px; overflow: auto; background: white; }
+#browser {  }
+#browser .item.folder a { cursor: default; outline: none; }
+#browser .item.ui-selected { background: #ddd; }
+
+#browser-overlay { height: 340px }
+
+.item { color: #333 !important; }
+
+.icons-64 .item { float: left; width: 100px; height: 100px; margin: 0.3em; }
+.icons-64 .item .name { display: block; max-height: 18pt; overflow: hidden; text-align: center; font: bold 8pt/9pt Tahoma; }
+.icons-64 .item .size { display: block; text-align: center; font: normal 8pt Tahoma; color: gray; }
+.icons-64 .item .ico { display: block; width: 64px; height: 64px; margin: 0.3em auto; }
+.icons-64 .item .ico .o { display: block; width: 64px; height: 64px;  }
+.icons-64 .item .ico { background: url('/sfFormExtraPlugin/images/mime/64x64/unknown.png') no-repeat center center; }
+.icons-64 .item.protected   .ico .o { background: url('/sfFormExtraPlugin/images/mime/32x32/lockoverlay.png') right bottom no-repeat; }
+.icons-64 .item.folder      .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/folder.png'); }
+.icons-64 .item.archive     .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/archive.png'); }
+.icons-64 .item.doc         .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/doc.png'); }
+.icons-64 .item.exe         .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/exe.png'); }
+.icons-64 .item.font        .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/font.png'); }
+.icons-64 .item.html        .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/html.png'); }
+.icons-64 .item.image       .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/image.png'); }
+.icons-64 .item.pdf         .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/pdf.png'); }
+.icons-64 .item.sound       .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/sound.png'); }
+.icons-64 .item.spreadsheet .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/spreadsheet.png'); }
+.icons-64 .item.txt         .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/txt.png'); }
+.icons-64 .item.video       .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/video.png'); }
+.icons-64 .item.word        .ico { background-image: url('/sfFormExtraPlugin/images/mime/64x64/word.png'); }

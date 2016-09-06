@@ -1,0 +1,1 @@
+<div class="h-hide" style="z-index:100"><table id="print_header" class="contact-info"><tr><th><img src="/pics/contact-logo-print.gif" width="283" height="62" alt="Агентство «Контакт — Элитная Недвижимость»"/></th><td><p>Москва, ул. Арбат, д. 13/36<br/>Телефон: +7 <?= $phone ? $phone: '(495) 956 77 99'?><br/><a href="/">http://www.kre.ru</a></p></td></tr></table></div>

@@ -1,0 +1,24 @@
+indexSuccess:
+  components:
+    one:          [menu, page]
+#    two:          [form, contactForm]
+#    three:        [menu, orderCatalog]
+#    four:         [seotext, get]
+
+archiveSuccess:
+  components:
+    one:          [menu, page]
+#    two:          [menu, orderCatalog]
+#    three:        [seotext, get]
+
+homepageSuccess:
+  components:
+    one:          [menu, lot]
+    two:          [menu, claimForm]
+    three:        [menu, searchForm]
+    four:         [menu, services]
+#    five:         [menu, orderCatalog]
+#    six:          [seotext, get]
+
+404Success:
+  layout: clean

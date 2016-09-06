@@ -1,0 +1,10 @@
+claimSuccess:
+  components:
+    one:          [menu, claim]
+#    two:          [menu, orderCatalog]
+#    three:        [seotext, get]
+  javascripts: [jquery.cookie.js]
+orderCatalogSuccess:
+  components:
+    one:          [menu, claim]
+ #   three:        [seotext, get]

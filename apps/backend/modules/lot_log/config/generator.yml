@@ -1,0 +1,43 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           LotLog
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          lot_log
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _new:               { credentials: noone }
+        _edit:              { credentials: noone }
+        _delete:            { credentials: noone }
+      fields:
+        id:                 { label: 'ID' }
+        lot_id:             { label: 'ID объекта' }
+        modifications:      { label: 'Изменения' }
+        created_by:         { label: 'Пользователь' }
+        created_at:         { label: 'Дата' }
+        lot_name:           { label: 'Наименование объекта' }
+        lot_type:           { label: 'Тип недвижимости' }
+      list:
+        title:              'Список изменений'
+        display:            [lot_id, _lot_name, _lot_type, created_by, created_at]
+        max_per_page:       30
+        table_method:       retrieveBackendLotLogList
+        sort:               [id, desc]
+        object_actions:
+          _show:            { label: 'Посмотреть' }
+        batch_actions:      {}
+      filter:
+        display:            [lot_id, created_by, created_at]
+      form:    ~
+      edit:    ~
+      new:     ~
+      show:
+        title:              'Описание изменения'
+        display:            [_lot_name, lot_id, created_by, created_at, _modifications]

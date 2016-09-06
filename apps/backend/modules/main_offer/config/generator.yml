@@ -1,0 +1,42 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           MainOffer
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          main_offer
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _new:             { credentials: noone }
+        _delete:          { credentials: noone }
+      fields:
+        type:             { label: 'Тип недвижимости' }
+        type_text:        { label: 'Тип недвижимости' }
+        description:      { label: 'Описание раздела' }
+        lot_id:           { label: 'Объект' }
+        lot:              { label: 'Объект' }
+        lot_anons:        { label: 'Анонс объекта' }
+      list:
+        title:            'Предложения'
+        display:          [=type_text, _lot]
+        object_actions:
+          _edit: ~
+          clear:          { label: 'Очистить объект' }
+        batch_actions:    {}
+      filter:
+        class:            false
+      form:
+        display:          [description, lot_anons]
+      edit:
+        title:            'Редактирование раздела "%%type_text%%"'
+        actions:
+          clear:          { label: 'Очистить объект' }
+          _list: ~
+          _save: ~
+      new:     ~

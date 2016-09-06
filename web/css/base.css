@@ -1,0 +1,175 @@
+/*body, td, th {
+    margin: 0;
+    font-family: Tahoma;
+    font-size: 70%;
+    color: #000000;
+}*/
+
+P {
+    margin: 5px 0px 5px 0px;
+}
+
+a.bigred {
+    margin: 0;
+    font-family: Tahoma;
+    font-size: 110%;
+    font-weight: bold;
+    color: #af3e46;
+}
+
+a.adres {
+    margin: 0;
+    font-family: Tahoma;
+    font-size: 130%;
+    font-weight: bold;
+    color: #000000;
+}
+
+.lot {
+    margin: 0;
+    font-family: Tahoma;
+    font-size: 100%;
+    font-weight: bold;
+    color: #b1b190;
+}
+
+.mini {
+    margin: 0;
+    font-family: Tahoma;
+    font-size: 60%;
+    color: #000000;
+}
+
+h2 {
+    margin: 0;
+    font-family: "times new roman";
+    font-size: 220%;
+    font-weight: normal;
+    color: #000000;
+}
+
+h3 {
+    margin: 0;
+    font-family: tahoma;
+    font-size: 130%;
+    color: #000000;
+}
+
+a {
+    color: #000000;
+}
+
+.yel, .yel a {
+    font-family: Tahoma;
+    color: #fffbc5;
+}
+
+a.yel {
+    color: #fffbc5;
+}
+
+a.red {
+    color: #af3e46;
+}
+
+.red {
+    color: #af3e46;
+}
+
+a.nonu {
+    text-decoration: none;
+}
+
+span.yel, span.yel a {
+    font-family: Tahoma;
+    color: #fffbc5;
+}
+
+span.header, span.header a {
+    color: #000000;
+    font-size: 130%;
+    font-weight: bold
+}
+
+span.red, span.red a {
+    color: #b23c44;
+}
+
+span.blue, span.blue a {
+    color: #0000ff;
+}
+
+table.form th {
+    text-align: right;
+    padding: 5px;
+}
+
+table.param2 td {
+	padding-right: 15px;
+    padding-bottom: 10px;
+}
+
+table.param td {
+    padding: 10px 20px 10px 0px;
+}
+
+img {
+    border-color: #000000;
+}
+
+.pages {
+    display: inline-block;
+    width: 48px;
+    height: 25px;
+    background-image: url(/images/page.gif);
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 5px 0px 0px 0px;
+    float: left;
+    margin: 0px 1px 0px 0px;
+}
+
+.calc_form {
+    width: 250px;
+}
+
+
+.WisiwygTable {
+    width: 100%;
+    background-color: #cccccc;
+    border-collapse: collapse;
+}
+
+.WisiwygTable td {
+    background-color: #FFFFFF;
+    padding: 5px;
+    margin: 0px;
+    border: 1px outset #cccccc;
+}
+
+table.noborder {
+    width: 100%;
+    /*background-color:#cccccc;*/
+    border-collapse: collapse;
+}
+
+table.noborder td {
+    /*background-color:#FFFFFF;*/
+    padding: 5px;
+    margin: 0px;
+    border: 0px dashed #DDDDDD;
+}
+
+.nodecoration {text-decoration: none;}
+
+.pricefont {font-size:80%; font-weight:normal;}
+.mainprice {font-weight:bold;}
+
+
+ADDRESS,CAPTION,CITE,CODE,DFN,EM,STRONG,TH,VAR {font-style:normal;font-weight:normal;}
+BODY {font-size: 11px; line-height: 16px; font-family: Arial, sans-serif; color: #3c3c3c; background-color: #ffffff; margin: 0px; padding: 0px;}
+BODY TABLE {font-size: 11px; line-height: 16px; font-family: Arial, sans-serif; color: #3c3c3c; background-color: #ffffff; margin: 0px; padding: 0px;}
+BODY SMALL {font-size: 11px; line-height: 16px;}
+.calc H2 {font-family: Arial, sans-serif; font-size: 24px; line-height: 30px; color: #9d1c20; margin: 0px 0px 9px;}
+.calc TD {white-space: nowrap;}
+P {margin: 10px 0px 0px;}

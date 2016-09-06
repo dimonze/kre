@@ -1,0 +1,42 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Claim
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          claim
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        fio:                { label: 'ФИО' }
+        phone:              { label: 'Телефон' }
+        email:              { label: 'Email' }
+        status:             { label: 'Статус' }
+        description:        { label: 'Описание'}
+        created_at:         { label: 'Дата создания'}
+        updated_at:         { label: 'Дата изменения'}
+        updated_at:         { label: 'Дата изменения'}
+        types:              { label: 'Тип предложения'}
+        lot_id:             { label: 'Номер лота'}
+      list:
+        title: 'Список заявок'
+        display: [fio, phone, email, _types, lot_id, created_at, updated_at, _status]
+        sort:               [id, desc]
+        object_actions:
+          _edit: ~
+          _delete: ~
+        batch_actions:      {}
+      filter:
+        fields:
+          types:            { attributes: { style: 'height: 120px' } }
+      form:
+        display: [fio, phone, email, status, description]
+      edit:
+        title:             'Редактирование заявки "%%fio%% - %%created_at%%"'
+      new: ~

@@ -1,0 +1,12 @@
+[submodule "plugins/csDoctrineActAsSortablePlugin"]
+	path = plugins/csDoctrineActAsSortablePlugin
+	url = git://github.com/bshaffer/csDoctrineActAsSortablePlugin.git
+[submodule "lib/vendor/symfony"]
+	path = lib/vendor/symfony
+	url = git://github.com/symfony/symfony1.git
+[submodule "plugins/sfFormExtraPlugin"]
+	path = plugins/sfFormExtraPlugin
+	url = git://github.com/davidsblom/sfFormExtraPlugin.git
+[submodule "lib/vendor/errbit"]
+	path = lib/vendor/errbit
+	url = git://github.com/flippa/errbit-php.git

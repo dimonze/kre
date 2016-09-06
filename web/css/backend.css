@@ -1,0 +1,142 @@
+#global-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  background: url(/images/ajax-loader.gif) no-repeat;
+  z-index: 333;
+}
+
+ul.backend_nav {
+  list-style-type: none;
+  font-size: 1.3em;
+  margin: 10px;
+  padding: 5px 10px;
+  background: #DFEFFC;
+  border: 1px solid #C5DBEC;
+}
+
+ul.backend_nav li {
+  display: inline;
+  padding-right: 0.5em;
+}
+
+ul.backend_nav a {
+  text-decoration: none;
+  color: #2E6E9E;
+  font-weight: bold;
+}
+ul.backend_nav a:hover, ul.backend_nav .current a {
+  color: #E17009;
+}
+ul.backend_nav .current a {
+  cursor: text;
+}
+
+ul.subnav {
+  font-size: 1.3em;
+  margin: 1px 10px 10px 10px;
+  padding: 5px 10px;
+}
+ul.subnav a {
+  font-weight: normal;
+}
+
+.help {margin-top: -20px;}
+
+#sf_admin_container ul.sf_admin_actions_top {
+  float: left;
+  list-style-type: none;
+}
+.sf_admin_actions_top .sf_button {padding: 0.1em;}
+
+input.wide   {width: 540px;}
+input.medium {width: 100px;}
+input.narrow {width: 25px;}
+input.float  {width: 40px;}
+
+#lot_params {margin-top: 30px;}
+#lot_params table tr td:first-child {width: 208px;}
+#lot_params_new table th {font-size: 1.2em; font-weight: bold;}
+
+#lot_photos {margin-bottom: 30px;}
+
+.param-type-select {height: 22px;}
+
+#ymap {
+  height: 400px;
+  width: 800px;
+}
+
+.chars {
+  display: block;
+  margin-top: -0.5em;
+  font-size: 0.9em;
+  font-style: italic;
+}
+.chars.error {
+  font-weight: bold;
+  color: #f55;
+}
+.sf_admin_td_actions li {
+    display: inline;
+    line-height: 21px;
+}
+
+textarea#LotParams_infra_secur, textarea#LotParams_infra_accomplishment,
+textarea#LotParams_infra_additional, textarea#LotParams_infra_objects, textarea#LotParams_infra_services {
+  width: 640px;
+}
+
+label .warn {
+  position: absolute;
+  margin-left: 50px;
+  font-weight: normal;
+  color: #f00;
+  margin-top: -5px;
+}
+
+.sf_button.disabled {
+  color: #ccc;
+  cursor: wait;
+}
+
+input.good {
+  border-color: #6f6;
+  background-color: #afa;
+}
+
+input.bad {
+  border-color: #f66;
+  background-color: #faa;
+}
+
+.calcFrom{
+  border:1px solid green!important;
+}
+.calcTo{
+  border:1px solid blue!important;
+}
+
+.eq-table{
+  width: 100%;
+  padding-bottom: 40px;
+}
+.eq-table td{
+  padding-right: 60px;
+}
+.info-block{
+  float:right;
+  margin-top: 25px;
+}
+.info-block h1{
+  font-size: 18px;
+  font-weight: bold;
+}
+.admin-link{
+  text-decoration: underline!important;
+}
+
+

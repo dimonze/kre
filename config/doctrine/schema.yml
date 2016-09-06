@@ -1,0 +1,431 @@
+detect_relations: false
+options:
+  type: InnoDB
+  collate: utf8_general_ci
+  charset: utf8
+
+
+Lot:
+  actAs:
+    Timestampable: ~
+
+  columns:
+    id:
+      type: integer
+      primary: true
+      unsigned: true
+      autoincrement: true
+    type:
+      type: enum
+      values: [eliteflat, elitenew, flatrent, cottage, outoftown, comrent, comsell]
+      notnull: true
+    is_penthouse:
+      type: boolean
+      notnull: true
+      default: false
+    has_children:
+      type: boolean
+      default: false
+      notnull: true
+    pid:
+      type: integer
+      unsigned: true
+    name:
+      type: string(255)
+      notnull: true
+    address:
+      type: array
+    metro_id:
+      type: integer(1)
+      unsigned: true
+    district_id:
+      type: integer(1)
+      unsigned: true
+    ward:
+      type: integer(1)
+      unsigned: true
+    ward2:
+      type: integer(1)
+      unsigned: true
+    hide_price:
+      type: boolean
+      default: false
+      notnull: true
+    price_from:
+      type: integer
+      unsigned: true
+      notnull: true
+      default: 0
+    price_to:
+      type: integer
+      unsigned: true
+      notnull: true
+      default: 0
+    price_all_from:
+      type: integer
+      unsigned: true
+      notnull: true
+      default: 0
+    price_all_to:
+      type: integer
+      unsigned: true
+      notnull: true
+      default: 0
+    area_from:
+      type: decimal(10,2)
+      unsigned: true
+      notnull: true
+      default: 0
+    area_to:
+      type: decimal(10,2)
+      unsigned: true
+      notnull: true
+      default: 0
+    currency:
+      type: enum
+      values: [RUR, EUR, USD]
+      notnull: true
+    new_price: date
+    new_object: date
+    lat: float(9,6)
+    lng: float(9,6)
+    anons: text
+    special_text: text
+    hidden_text: text
+    is_special:
+      type: boolean
+      default: false
+      notnull: true
+    description: text
+    broker_id:
+      type: integer(2)
+      unsigned: true
+    show_phone:
+      type: enum
+      values: [both, broker, office]
+      default: both
+      notnull: true
+    rating:
+      type: integer(2)
+      default: 0
+      notnull: true
+    status:
+      type: enum
+      values: [active, hidden, inactive]
+      notnull: true
+      default: hidden
+    priority: boolean
+    exportable: boolean
+    seo_title: string(255)
+    seo_keywords: string(255)
+    seo_description: string(255)
+    shortcut: string(255)
+
+  indexes:
+    rating:
+      fields: [rating]
+    shortcut:
+      fields: [shortcut]
+      type: unique
+    type:
+      fields: [type]
+    status:
+      fields: [status]
+
+  relations:
+    Parent:
+      class: Lot
+      local: pid
+      foreign: id
+      foreignAlias: Lots
+      type: one
+      foreignType: many
+      onDelete: cascade
+    Broker:
+      class: Broker
+      local: broker_id
+      foreign: id
+      foreignAlias: Lots
+      type: one
+      foreignType: many
+      onDelete: set null
+
+
+Param:
+  columns:
+    id:
+      type: integer(2)
+      primary: true
+      unsigned: true
+      autoincrement: true
+    name:
+      type: string(150)
+      notnull: true
+
+
+LotParam:
+  actAs:
+    Sortable:
+      uniqueBy: [lot_id, param_type_id]
+
+  columns:
+    lot_id:
+      type: integer
+      unsigned: true
+      notnull: true
+      primary: true
+    param_id:
+      type: integer(2)
+      unsigned: true
+      notnull: true
+      primary: true
+    param_type_id:
+      type: varchar(15)
+    value:
+      type: string(500)
+      notnull: true
+
+  relations:
+    Lot:
+      local: lot_id
+      foreign: id
+      foreignAlias: LotParams
+      type: one
+      foreignType: many
+      onDelete: cascade
+    Params:
+      class: Param
+      local: param_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: cascade
+
+
+Photo:
+  actAs:
+    Sortable:
+      uniqueBy: [lot_id, photo_type_id]
+
+  columns:
+    id:
+      type: integer
+      primary: true
+      unsigned: true
+      autoincrement: true
+    lot_id:
+      type: integer
+      unsigned: true
+      notnull: true
+    name: string(255)
+    photo_type_id:
+      type: integer(1)
+      unsigned: true
+
+  relations:
+    Lot:
+      local: lot_id
+      foreign: id
+      foreignAlias: Photos
+      type: one
+      foreignType: many
+      onDelete: cascade
+
+  options:
+    orderBy: photo_type_id ASC, position ASC
+
+
+Page:
+  actAs:
+    NestedSet: ~
+    Timestampable:
+      updated:
+        disabled: true
+
+  columns:
+    id:
+      type: integer(2)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    is_active:
+      type: boolean
+      default: true
+      notnull: true
+    name:
+      type: string(255)
+      notnull: true
+    anons: clob(65532)
+    body: clob(16777215)
+    seo_title: string(255)
+    seo_keywords: string(255)
+    seo_description: string(255)
+
+  indexes:
+    created_at_sort_desc:
+      fields:
+        created_at:
+          sorting: DESC
+
+
+Broker:
+  columns:
+    id:
+      type: integer(2)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    name: string(255)
+    phone: string(24)
+    department:
+      type: enum
+      values: [city, commercial, country, rent]
+      notnull: true
+    role:
+      type: enum
+      values: [broker, manager]
+      notnull: true
+    email: string(128)
+    login: string(64)
+    password: string(40)
+    hidden: boolean
+
+  indexes:
+    login:
+      fields: [login]
+      type: unique
+    email:
+      fields: [email]
+      type: unique
+
+
+Vacancy:
+  columns:
+    id:
+      type: integer(2)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    type:
+      type: enum
+      values: [city, country, commercial, pr, internship]
+      notnull: true
+    name:
+      type: string(150)
+      notnull: true
+    description:
+      type: clob(65532)
+      notnull: true
+    email:
+      type: string(50)
+      notnull: true
+      email: { check_mx: false }
+    phone: string(50)
+    fio: string(50)
+
+
+Click:
+  columns:
+    day: date
+    name: string(255)
+    amount: integer
+  indexes:
+    login:
+      fields: [day, name]
+      type: unique
+
+
+Query:
+  columns:
+    day: timestamp
+    params: array
+    type:
+      type: enum
+      values: [eliteflat, elitenew, flatrent, penthouse, cottage, outoftown, comrent, comsell]
+      notnull: true
+      
+  indexes:
+    login:
+      fields: [day]
+
+
+Claim:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer(2)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    types:
+      type: array
+      notnull: false
+    lot_id:
+      type: integer
+      unsigned: true
+      notnull: false
+    fio:
+      type: string(150)
+      notnull: true
+    email:
+      type: string(150)
+      notnull: true
+      email: { check_mx: false }
+    phone:
+      type: string(50)
+      notnull: true
+    description:
+      type: string(1000)
+    status:
+      type: enum
+      values: [new, resolved, rejected]
+      default: new
+
+
+MainOffer:
+  columns:
+    type:
+      type: enum
+      values: [eliteflat, elitenew, penthouse, flatrent, outoftown, cottage, comrent, comsell]
+      primary: true
+    description: clob(65532)
+    lot_id:
+      type: integer
+      unsigned: true
+      notnull: false
+    lot_anons: clob(65532)
+    lot_object: object
+
+
+LotLog:
+  actAs:
+    Timestampable:
+      updated:
+        disabled: true
+
+  columns:
+    id:
+      type: integer
+      unsigned: true
+      primary: true
+      autoincrement: true
+    lot_id:
+      type: integer
+      unsigned: true
+      notnull: true
+    modifications:
+      type: array
+      notnull: true
+    created_by:
+      type: string(255)
+      notnull: true
+
+  relations:
+    Lot:
+      local: lot_id
+      foreign: id
+      foreignAlias: LotLogs
+      type: one
+      foreignType: many
+      onDelete: cascade

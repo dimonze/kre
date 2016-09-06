@@ -1,0 +1,2 @@
+30  *   *    *   *   find /var/www/kre/tmp -type f -cmin +600 -print0 | xargs -n 200 -r -0 rm
+0   1   *    *   *   /var/www/kre/symfony reindex --application=frontend > /dev/null
